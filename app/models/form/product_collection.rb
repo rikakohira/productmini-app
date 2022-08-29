@@ -10,6 +10,7 @@ class Form::ProductCollection < Form::Base
     self.products = FORM_COUNT.times.map { Product.new() } unless self.products.present?
   end
 
+  #コントローラからストロングパラメータを受け取る
   def products_attributes=(attributes)
     self.products = attributes.map { |_, v| Product.new(v) }
   end

@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def new
+    #コレクションモデルのインスタンスを生成
     @form = Form::ProductCollection.new
   end
 
