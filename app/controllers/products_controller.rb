@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
+
   def new
-    #コレクションモデルのインスタンスを生成
     @form = Form::ProductCollection.new
   end
 
@@ -21,5 +21,5 @@ class ProductsController < ApplicationController
         params.require(:form_product_collection)
         .permit(products_attributes: [:name, :price, :unit, :availability])
     end
-  
+
 end

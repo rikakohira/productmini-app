@@ -1,4 +1,10 @@
-class Form::ProductCollection < Form::Base
+class Form::ProductCollection
+  include ActiveModel::Model
+  include ActiveModel::Callbacks
+  include ActiveModel::Validations
+  include ActiveModel::Validations::Callbacks
+
+  
   #作成したい登録フォームの数を指定
   FORM_COUNT = 10 
   #クラス外部からproductsへのアクセスが可能
