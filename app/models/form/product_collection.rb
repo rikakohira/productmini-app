@@ -4,9 +4,13 @@ class Form::ProductCollection
   include ActiveModel::Validations
   include ActiveModel::Validations::Callbacks
 
+  def value_to_boolean(value)
+    ActiveRecord::ConnectionAdapters::Column.value_to_boolean(value)
+  end
+
   
   #作成したい登録フォームの数を指定
-  FORM_COUNT = 10 
+  FORM_COUNT = 6
   #クラス外部からproductsへのアクセスが可能
   attr_accessor :products 
 

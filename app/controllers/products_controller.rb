@@ -12,14 +12,13 @@ class ProductsController < ApplicationController
       flash.now[:alert] = "商品登録に失敗しました"
       render :new
     end
-
   end
 
   private
 
     def product_collection_params
         params.require(:form_product_collection)
-        .permit(products_attributes: [:name, :price, :unit, :availability])
+        permit(products_attributes: [:name, :price, :unit, :availability])
     end
 
 end
